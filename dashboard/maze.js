@@ -10,7 +10,7 @@ var carImage;
 
 
 function startGame() {
-  let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
 
@@ -23,13 +23,6 @@ function startGame() {
   document.addEventListener('keyup', keyUp);
 
   maze.generate();
-
-  overlays.forEach(overlay => {
-    overlay.addEventListener('click', () => {
-        overlay.classList.remove('visible');
-        startGame()
-    });
-});
 }
 
 class Car {
@@ -511,7 +504,6 @@ function goalReached() {
   console.log("car col " + car.col + " final score " + car.finalscore)
   if ((car.col == maze.cols - 1) && ((car.row == maze.rows - 1))) {
     car.reachedfinal = 1;
-    document.getElementById('game-over-text').classList.add('visible');
   }
 }
 
