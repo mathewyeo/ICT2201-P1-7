@@ -29,13 +29,16 @@ class Car {
 
   constructor() {
     this.init();
-    console.log("car init")
+    
   }
 
 
   init() {
     this.col = 0;
     this.row = 0;
+    this.score = 100;
+    this.finalscore = 0;
+    this.reachedfinal = 0;
   }
 
 }
@@ -73,13 +76,9 @@ class Maze {
 
     this.cells = [];
 
-    this.obmax = (this.cols - 1)
-    this.half = (this.cols - 1)/2
-    this.obCol1 = this.getRandomInt(1, this.half) * this.cellSize + 2
+    this.obmax = (this.cols - 3)
+    this.obCol1 = this.getRandomInt(1, this.obmax) * this.cellSize + 2
     this.obRow1 = this.getRandomInt(1, this.obmax) * this.cellSize + 2
-    this.obCol2 = this.getRandomInt(this.half, this.obmax-1) * this.cellSize + 2
-    this.obRow2 = this.getRandomInt(1, this.obmax-1) * this.cellSize + 2
-    
 
     this.generate()
 
@@ -200,7 +199,6 @@ class Maze {
     ctx.fillRect((this.cols - 1) * this.cellSize, (this.rows - 1) * this.cellSize, this.cellSize, this.cellSize);
 
     drawObstacle(21, 21, this.obCol1, this.obRow1);
-    drawObstacle(21, 21, this.obCol2, this.obRow2);
 
 
     for (let col = 0; col < this.cols; col++) {
@@ -301,11 +299,18 @@ function keyDown(event) {
       if (carImage.type == "image") {carImage.image.src = "car left.png";}
       if (!maze.cells[car.col][car.row].leftBorder 
           && !((car.col-1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col-1)* maze.cellSize + 2 == maze.obCol2 && (car.row  )* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.col -= 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
 
     case 39: // Right arrow pressed
@@ -314,11 +319,18 @@ function keyDown(event) {
 
       if (!maze.cells[car.col][car.row].rightBorder 
           && !((car.col+1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col+1)* maze.cellSize + 2 == maze.obCol2 && (car.row  )* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.col += 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
 
     case 40: // Down arrow pressed
@@ -326,11 +338,18 @@ function keyDown(event) {
       if (carImage.type == "image") {carImage.image.src = "car down.png";}
       if (!maze.cells[car.col][car.row].btmBorder 
           && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row+1)* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col  )* maze.cellSize + 2 == maze.obCol2 && (car.row+1)* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.row += 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
 
     case 38: // Up arrow pressed
@@ -338,11 +357,18 @@ function keyDown(event) {
       if (carImage.type == "image") {carImage.image.src = "car up.png";}
       if (!maze.cells[car.col][car.row].topBorder 
           && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row-1)* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col  )* maze.cellSize + 2 == maze.obCol2 && (car.row-1)* maze.cellSize + 2 == maze.obRow2) 
           ){
         car.row -= 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
     default:
       break;
@@ -361,45 +387,72 @@ function buttonClick(event) {
       if (carImage.type == "image") {carImage.image.src = "car left.png";}
       if (!maze.cells[car.col][car.row].leftBorder
           && !((car.col-1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col-1)* maze.cellSize + 2 == maze.obCol2 && (car.row  )* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.col -= 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
 
     case 'right':
       if (carImage.type == "image") {carImage.image.src = "car.png";}
       if (!maze.cells[car.col][car.row].rightBorder
           && !((car.col+1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col+1)* maze.cellSize + 2 == maze.obCol2 && (car.row  )* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.col += 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
 
     case 'down':
       if (carImage.type == "image") {carImage.image.src = "car down.png";}
       if (!maze.cells[car.col][car.row].btmBorder
           && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row+1)* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col  )* maze.cellSize + 2 == maze.obCol2 && (car.row+1)* maze.cellSize + 2 == maze.obRow2)
           ) {
         car.row += 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
-
+      goalReached();
       break;
 
     case 'up':
       if (carImage.type == "image") {carImage.image.src = "car up.png";}
       if (!maze.cells[car.col][car.row].topBorder
           && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row-1)* maze.cellSize + 2 == maze.obRow1)
-          && !((car.col  )* maze.cellSize + 2 == maze.obCol2 && (car.row-1)* maze.cellSize + 2 == maze.obRow2) 
           ) {
         car.row -= 1;
         updateSpeed("down");
+        if (car.reachedfinal == 0) {
+          updateScore("add");
+        }
+      } else {
+        if (car.reachedfinal == 0) {
+          updateScore("subtract");
+        }
       }
+      goalReached();
       break;
     default:
       break;
@@ -420,6 +473,40 @@ function updateSpeed(event) {
       document.getElementById("speed-tag").innerHTML = speed;
     }
 }
+
+function updateScore(event) {
+
+  if (car.reachedfinal == 0) {
+    if (event == "add") {
+      car.score += 1
+      car.score = Math.max(car.score, 0)
+      document.getElementById("score-tag").innerHTML = car.score
+      console.log(car.score)
+    } 
+
+    else if (event == "subtract") {
+      car.score -= 10
+      car.score = Math.max(car.score, 0)
+      document.getElementById("score-tag").innerHTML = car.score
+      console.log(car.score)
+    }
+
+  }
+  
+  else {
+    car.finalscore = car.score
+    document.getElementById("score-tag").innerHTML = car.finalscore
+  }
+  
+}
+
+function goalReached() {
+  console.log("car col " + car.col + " final score " + car.finalscore)
+  if ((car.col == maze.cols - 1) && ((car.row == maze.rows - 1))) {
+    car.reachedfinal = 1;
+  }
+}
+
 
 
 
