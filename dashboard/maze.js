@@ -29,6 +29,7 @@ function startGame() {
     overlay.addEventListener('click', () => {
         overlay.classList.remove('visible');
         startGame();
+        document.getElementById("score-tag").innerHTML = car.score
     });
 });
 }
@@ -44,7 +45,7 @@ class Car {
   init() {
     this.col = 0;
     this.row = 0;
-    this.score = 100;
+    this.score = 150;
     this.finalscore = 0;
     this.reachedfinal = 0;
   }
@@ -311,7 +312,7 @@ function keyDown(event) {
         car.col -= 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -331,7 +332,7 @@ function keyDown(event) {
         car.col += 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -350,7 +351,7 @@ function keyDown(event) {
         car.row += 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -369,7 +370,7 @@ function keyDown(event) {
         car.row -= 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -399,7 +400,7 @@ function buttonClick(event) {
         car.col -= 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -417,7 +418,7 @@ function buttonClick(event) {
         car.col += 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -435,7 +436,7 @@ function buttonClick(event) {
         car.row += 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -453,7 +454,7 @@ function buttonClick(event) {
         car.row -= 1;
         updateSpeed("down");
         if (car.reachedfinal == 0) {
-          updateScore("add");
+          updateScore("subtract");
         }
       } else {
         if (car.reachedfinal == 0) {
@@ -472,12 +473,12 @@ function buttonClick(event) {
 
 function updateSpeed(event) {
     if (event == "down") {
-      var speed = "5" + " km/h"
+      var speed = "5" + " m/s"
       document.getElementById("speed-tag").innerHTML = speed;
   }
 
     else if (event == "up") {
-      var speed = "0" + " km/h"
+      var speed = "0" + " m/s"
       document.getElementById("speed-tag").innerHTML = speed;
     }
 }
@@ -486,17 +487,20 @@ function updateScore(event) {
 
   if (car.reachedfinal == 0) {
     if (event == "add") {
-      car.score += 1
+      car.score += 11
       car.score = Math.max(car.score, 0)
       document.getElementById("score-tag").innerHTML = car.score
       console.log(car.score)
     } 
 
     else if (event == "subtract") {
-      car.score -= 10
+      car.score -= 1
       car.score = Math.max(car.score, 0)
       document.getElementById("score-tag").innerHTML = car.score
       console.log(car.score)
+      if (car.score == 0) {
+        document.getElementById('game-over-text').classList.add('visible');
+      }
     }
 
   }
@@ -511,8 +515,9 @@ function updateScore(event) {
 function goalReached() {
   console.log("car col " + car.col + " final score " + car.finalscore)
   if ((car.col == maze.cols - 1) && ((car.row == maze.rows - 1))) {
+    updateScore("add");
     car.reachedfinal = 1;
-    document.getElementById('game-over-text').classList.add('visible');
+    document.getElementById('victory-text').classList.add('visible');
   }
 }
 
