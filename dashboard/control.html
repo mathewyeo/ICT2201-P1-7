@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,50 +10,46 @@
     <link rel="stylesheet" href="style2.css">
     <title>DASHBOARD</title>
     <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+    </style>
 </head>
-
-
 <body onload='startGame()'>
     <div class="d-flex" id="wrapper">
         <!-- Nav bar -->
@@ -76,7 +69,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Home</a></li>
-                                 
                                 <li><a class="dropdown-item" href="#">Logout</a></li>
                             </ul>
                         </li>
@@ -109,7 +101,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">11.09s</h3>
+                                <h3 class="fs-2">0s</h3>
                                 <p class="fs-5">Timer</p>
                             </div>
                             <i class="fas fa-hourglass-half fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -126,6 +118,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         </div>
                     </div>
                 </div>
+                <div class="overlay-text visible">
+                    Click to Start
+                  </div>
+                  <div id="game-over-text" class="overlay-text">
+                    GAME OVER
+                    <span class="overlay-text-small">Click to Restart</span>
+                </div>
                 <div style='float:left'>
                     <h3 class="fs-4 mb-3">Live feed of the Car</h3>
 
@@ -141,15 +140,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             <img id="car-down" src="car down.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
                             <img id="stop-img" src="stop.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
                         </canvas>
-
-
-
-
                     </div>
-
-
-
-
                 </div>
                 <div style='float:right'>
                     <div class="dropdown">
@@ -202,25 +193,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             </table>
                         </div>
                     </div>
-                     <!-- Hidden blocks that you show when requested. -->
-                    <div id="level2" class="container" style="display: none;"> 
-                        <h4>test</h4>
-                    </div>
                 </div>
                 </div>
-                
-                <!-- Trigger/Open The Modal -->
-<button id="myBtn">Instructions</button>
+               <!-- Trigger/Open The Modal -->
+               <button id="myBtn">Instructions</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+               <!-- The Modal -->
+               <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="instructions-1.JPG">
-  </div>
-               
+               <!-- Modal content -->
+               <div class="modal-content">
+                   <span class="close">&times;</span>
+                   <img src="instructions-1.JPG">
+               </div> 
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
@@ -228,34 +213,34 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <script src="jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
     <script src="maze.js"></script>
-    
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
 
 </body>
 </html>
