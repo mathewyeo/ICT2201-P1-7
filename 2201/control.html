@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <title>DASHBOARD</title>
+    <style>
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+    </style>
+</head>
+<body onload='startGame()'>
+    <div class="d-flex" id="wrapper">
+        <!-- Nav bar -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-chart-line primary-text fs-4 me-3"></i>
+                    <h2 class="fs-2 m-0">Game/Dashboard</h2>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="http://localhost/2201/index.php">Home</a></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2" id="score-tag">150</h3>
+                                <p class="fs-5">Score</p>
+                            </div>
+                            <i class="fas fa-star fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2" id="speed-tag">0 m/s</h3>
+                                <p class="fs-5">Speed</p>
+                            </div>
+                            <i
+                                class="fas fa-tachometer-alt fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">0s</h3>
+                                <p class="fs-5">Timer</p>
+                            </div>
+                            <i class="fas fa-hourglass-half fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2">%85</h3>
+                                <p class="fs-5">Battery</p>
+                            </div>
+                            <i class="fas fa-car-battery fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="overlay-text visible">
+                    Click to Start
+                  </div>
+                  <div id="game-over-text" class="overlay-text">
+                    GAME OVER
+                    <span class="overlay-text-small">Click to Restart</span>
+                </div>
+                <div id="victory-text" class="overlay-text">
+                    VICTORY
+                    <span class="overlay-text-small">Click to Restart</span>
+                </div>
+                <div style='float:left'>
+                    <h3 class="fs-4 mb-3">MAZE</h3>
+
+                    <div id="maze">
+            
+                        <div id="mazecanvas" style="margin-left:auto; margin-right:auto;margin-bottom: 10px;text-align: center;width: 10%;font-size: large"></div>
+
+                        <canvas id="canvas" width="625" height="375" style="margin-left:auto; margin-right:auto; background-color: white">
+            This text is displayed if your browser does not support HTML5 Canvas.
+                            <img id="car-right" src="car.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
+                            <img id="car-left" src="car left.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
+                            <img id="car-up" src="car up.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
+                            <img id="car-down" src="car down.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
+                            <img id="stop-img" src="stop.png" style="position: relative; left: 0; right: 0; top: 0; bottom: auto; " height="15" width="15">
+                        </canvas>
+                    </div>
+                </div>
+                <div style='float:right'>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Game Levels</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <a class="level-item" href="control.html">Level 1</a>
+                        <a class="level-item" href="control2.html">Level 2</a>
+                        <a class="level-item" href="control3.html">Level 3</a>
+                        </div>
+                    </div>
+                    <div id="page-2">
+                        <h3 class="fs-4 mb-3">Commands for the Car</h3>
+                        <div id="level1" class="container">
+                        <div class="col">
+                            <table class="table bg-white rounded shadow-sm  table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="50">#</th>
+                                        <th scope="col">Direction</th>
+                                        <th scope="col">Button</th>
+                                        <th scope="col" width="350">Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Left</td>
+                                        <td><button style="font-size:24px" onmousedown="buttonClick('left')" onmouseup="keyUp()"><i class="material-icons">arrow_back</i></button></td>
+                                        <td>(some code)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Right</td>
+                                        <td><button style="font-size:24px" onmousedown="buttonClick('right')" onmouseup="keyUp()"><i class="material-icons">arrow_forward</i></button></td>
+                                        <td>(some code)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Up</td>
+                                        <td><button style="font-size:24px" onmousedown="buttonClick('up')" onmouseup="keyUp()"><i class="material-icons">arrow_upward</i></button></td>
+                                        <td>(some code)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Down</td>
+                                        <td><button style="font-size:24px" onmousedown="buttonClick('down')" onmouseup="keyUp()"><i class="material-icons">arrow_downward</i></button></td>
+                                        <td>(some code)</td>
+                                    </tr>
+ <tr>
+                                        <th scope="row">5</th>
+                                        <td>Redirect</td>
+                                        <td><a href ="localhost:5000"><button style="font-size:24px" ><i class="material-icons">arrow_downward</i></button></a></td>
+                                        <td>Robotic Car</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+               <!-- Trigger/Open The Modal -->
+               <button id="myBtn">Instructions</button>
+
+               <!-- The Modal -->
+               <div id="myModal" class="modal">
+
+               <!-- Modal content -->
+               <div class="modal-content">
+                   <span class="close">&times;</span>
+                   <img src="level1.JPG">
+               </div> 
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="jquery-1.9.1.js"></script> -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="maze.js"></script>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
+</body>
+</html>
