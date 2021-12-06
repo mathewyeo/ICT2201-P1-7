@@ -47,9 +47,9 @@ Branch Coverage
 
 # Development Workflow
 ## Roles: 
-Gou Hang (Team Leader)
-Levisha (Backend Developer)
-Marissa (Backend Developer)
+Gou Hang (Team Leader),
+Levisha (Backend Developer),
+Marissa (Backend Developer),
 Mathew (Backend Developer)
 
 ## Master Branch:
