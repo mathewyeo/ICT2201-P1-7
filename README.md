@@ -37,13 +37,12 @@ Tests if Victory screen is displayed once the player completes the maze.
 Branch Coverage
 
 ![WhiteBox testing - Branch coverage](/testcases/branch.jpg)
-[embed]testcases/branch.pdf[/embed]
 
 
 # Development Workflow
 
 # Reflections
-Marissa: M3 helped me to better determine how my code should be optimized. Using the refactoring techniques taught in class, I was able to perform appropriate checks. In addition, I learnt various ways to utilize GitHub for easier merging and comparisons of code. 
+Marissa: M3 helped me to better determine how my code should be optimized. Using the refactoring techniques taught in class, I was able to perform appropriate checks. In addition, I learnt various ways to utilize GitHub for easier merging and comparisons of code. I realized how important it was to manage changes and new implementations in a seperate branch before merging the completed functions into the main branch.
 
 Mathew: Milestone 3 concludes the implementation and testing phase of SDLC, it taught me the importance of certain protocols enforced to ensure that the quality of the software be met despite being an agile approach. One of such is the usage of github, where developments can be done independently and merge when required to and also a tool for communication as it shows the progress when changes were pushed to the repository. 
 
