@@ -17,11 +17,18 @@ Testing for successful login and access to index page.
 <img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" width = "500" >
 
 
+
+
+
 ### System Test Case 3
+
 ### System Test Case 4
+![Test Case 4 - Gameover Screen](/testcases/carmove.gif)
+
 ### System Test Case 5
 Tests for the score. 
 https://github.com/mathewyeo/ICT2201-P1-7/blob/main/testcases/New%20vide01o.mp4
+![Test Case 5 - Gameover Screen](/testcases/score.gif)
 
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
@@ -30,7 +37,6 @@ Tests if Game Over screen is displayed once the score hits 0 before Player compl
 ### System Test Case 7
 Tests if Victory screen is displayed once the player completes the maze.
 ![Test Case 8 - Victory Screen](/testcases/victory.gif)
-
 
 
 # WhiteBox Testing
