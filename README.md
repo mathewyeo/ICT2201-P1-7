@@ -1,4 +1,4 @@
-# ICT2x01-P1-7 Project: Car
+# ICT2x01-P1-7 Project: Learning coding with a robotic car
 Project: Car aims to enhance children's understanding on basic computing knowledge through a series of computational quest designed to pair along with controllong a MSP432 robotic miniature car. The movement of the car will be based on the input by user and the sensors fitted to the car. 
 
 # 'Howto' Documentation
