@@ -40,6 +40,19 @@ Branch Coverage
 
 
 # Development Workflow
+//install serial module 
+
+python -m pip install pyserial
+
+
+//set up flask
+python -m pip install flask
+
+python -m venv myproject
+
+set FLASK_APP=main
+
+python -m flask run
 
 # Reflections
 Marissa:
