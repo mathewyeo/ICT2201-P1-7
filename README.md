@@ -22,7 +22,7 @@ Tests if the car can connect to webportal
 ![Test Case 4 - build connection with  car](/testcases/carmove.gif)
 
 ### System Test Case 5
-Tests for the score. 
+
 ![Test Case 6-score](/testcases/score.gif)
 
 ### System Test Case 6
