@@ -19,9 +19,12 @@ Testing for successful login and access to index page.
 
 ### System Test Case 3
 ### System Test Case 4
+![Test Case 7 - Gameover Screen](/testcases/carmove.gif)
+
 ### System Test Case 5
-Tests for the score. 
-https://github.com/mathewyeo/ICT2201-P1-7/blob/main/testcases/New%20vide01o.mp4
+![Test Case 7 - Gameover Screen](/testcases/score.gif)
+
+
 
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
@@ -43,5 +46,7 @@ Branch Coverage
 
 # Reflections
 Marissa:
+
+Levisha:
 
 Mathew: Milestone 3 concludes the implementation and testing phase of SDLC, it taught me the importance of certain protocols enforced to ensure that the quality of the software be met despite being an agile approach. One of such is the usage of github, where developments can be done independently and merge when required to and also a tool for communication as it shows the progress when changes were pushed to the repository. 
