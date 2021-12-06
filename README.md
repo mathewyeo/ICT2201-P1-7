@@ -19,6 +19,9 @@ Testing for successful login and access to index page.
 ### System Test Case 3
 ### System Test Case 4
 ### System Test Case 5
+Tests for the score. 
+![Test Case 6 - Score](/testcases/New vide01o.mp4)
+
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
 ![Test Case 7 - Gameover Screen](/testcases/gameover.gif)
