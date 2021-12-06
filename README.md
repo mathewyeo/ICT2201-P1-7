@@ -19,9 +19,11 @@ Testing for successful login and access to index page.
 
 ### System Test Case 3
 ### System Test Case 4
+![Test Case 4 - Gameover Screen](/testcases/carmove.gif)
+
 ### System Test Case 5
-Tests for the score. 
-https://github.com/mathewyeo/ICT2201-P1-7/blob/main/testcases/New%20vide01o.mp4
+![Test Case 5 - Gameover Screen](/testcases/score.gif)
+
 
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
@@ -38,6 +40,21 @@ Branch Coverage
 
 ![WhiteBox testing - Branch coverage](/testcases/branch.jpg)
 
+
+# 'Howto' Documentation
+//install serial module 
+
+python -m pip install pyserial
+
+
+//set up flask
+python -m pip install flask
+
+python -m venv myproject
+
+set FLASK_APP=main
+
+python -m flask run
 
 # Development Workflow
 
