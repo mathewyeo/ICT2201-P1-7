@@ -20,7 +20,7 @@ Testing for successful login and access to index page.
 ### System Test Case 4
 ### System Test Case 5
 Tests for the score. 
-![Test Case 6 - Score](/testcases/New vide01o.mp4)
+https://github.com/mathewyeo/ICT2201-P1-7/blob/main/testcases/New%20vide01o.mp4
 
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
