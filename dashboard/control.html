@@ -78,7 +78,7 @@
             </nav>
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2" id="score-tag">150</h3>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2" id="speed-tag">0 m/s</h3>
@@ -99,25 +99,9 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">0s</h3>
-                                <p class="fs-5">Timer</p>
-                            </div>
-                            <i class="fas fa-hourglass-half fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+                    
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">%85</h3>
-                                <p class="fs-5">Battery</p>
-                            </div>
-                            <i class="fas fa-car-battery fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="overlay-text visible">
                     Click to Start
@@ -174,25 +158,77 @@
                                         <th scope="row">1</th>
                                         <td>Left</td>
                                         <td><button style="font-size:24px" onmousedown="buttonClick('left')" onmouseup="keyUp()"><i class="material-icons">arrow_back</i></button></td>
-                                        <td>(some code)</td>
+                                        <td>if (carImage.type == "image") {carImage.image.src = "car left.png";}
+                                            if (!maze.cells[car.col][car.row].leftBorder
+                                                && !((car.col-1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
+                                                ) {
+                                              car.col -= 1;
+                                              updateSpeed("down");
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            } else {
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            }</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>Right</td>
                                         <td><button style="font-size:24px" onmousedown="buttonClick('right')" onmouseup="keyUp()"><i class="material-icons">arrow_forward</i></button></td>
-                                        <td>(some code)</td>
+                                        <td>if (carImage.type == "image") {carImage.image.src = "car.png";}
+                                            if (!maze.cells[car.col][car.row].rightBorder
+                                                && !((car.col+1)* maze.cellSize + 2 == maze.obCol1 && (car.row  )* maze.cellSize + 2 == maze.obRow1)
+                                                ) {
+                                              car.col += 1;
+                                              updateSpeed("down");
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            } else {
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            }</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
                                         <td>Up</td>
                                         <td><button style="font-size:24px" onmousedown="buttonClick('up')" onmouseup="keyUp()"><i class="material-icons">arrow_upward</i></button></td>
-                                        <td>(some code)</td>
+                                        <td>if (carImage.type == "image") {carImage.image.src = "car up.png";}
+                                            if (!maze.cells[car.col][car.row].topBorder
+                                                && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row-1)* maze.cellSize + 2 == maze.obRow1)
+                                                ) {
+                                              car.row -= 1;
+                                              updateSpeed("down");
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            } else {
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            }</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">4</th>
                                         <td>Down</td>
                                         <td><button style="font-size:24px" onmousedown="buttonClick('down')" onmouseup="keyUp()"><i class="material-icons">arrow_downward</i></button></td>
-                                        <td>(some code)</td>
+                                        <td>if (carImage.type == "image") {carImage.image.src = "car down.png";}
+                                            if (!maze.cells[car.col][car.row].btmBorder
+                                                && !((car.col  )* maze.cellSize + 2 == maze.obCol1 && (car.row+1)* maze.cellSize + 2 == maze.obRow1)
+                                                ) {
+                                              car.row += 1;
+                                              updateSpeed("down");
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            } else {
+                                              if (car.reachedfinal == 0) {
+                                                updateScore("subtract");
+                                              }
+                                            }</td>
                                     </tr>
                                 </tbody>
                             </table>
