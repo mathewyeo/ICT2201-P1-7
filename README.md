@@ -31,4 +31,5 @@ Tests if Victory screen is displayed once the player completes the maze.
 
 # WhiteBox Testing
 Branch Coverage
+
 ![WhiteBox testing - Branch coverage](/testcases/branch.jpg)
