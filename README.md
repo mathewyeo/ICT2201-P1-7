@@ -51,6 +51,17 @@ Tests if Game Over screen is displayed once the score hits 0 before Player compl
 Tests if Victory screen is displayed once the player completes the maze.
 ![Test Case 8 - Victory Screen](/testcases/victory.gif)
 
+# Blackbox Testing
+
+![BB testing ](/testcases/bb_1.jpg)
+
+![BB testing ](/testcases/bb_2.jpg)
+
+![BB testing ](/testcases/bb_3.jpg)
+
+https://docs.google.com/document/d/1tK3LI--h5lrHyQzFoephDCF4bykbQs2OHwLcxcNACyc/edit?usp=sharing
+
+
 
 # WhiteBox Testing
 Branch Coverage
