@@ -44,3 +44,5 @@ Branch Coverage
 # Reflections
 Marissa:
 
+Levisha:I have learnt how to apply the knowledge i learnt in class about whitebox testing, also applied the skills on how to create an cfg flow and also use the knowledge on blackbox testing, on whether the test cases are pass or fail and also provided screenshots. M3 is more about coding and lesser on writing or drawing daigrams compared to the other milestones. It was definetely challenging having to code them and make the web interact with the car , however it was done smoothly. 
+
