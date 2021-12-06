@@ -1,6 +1,7 @@
 # ICT2x01-P1-7 Project: Car
 Project: Car aims to enhance children's understanding on basic computing knowledge through a series of computational quest designed to pair along with controllong a MSP432 robotic miniature car. The movement of the car will be based on the input by user and the sensors fitted to the car. 
 
+# 'Howto' Documentation
 
 # BlackBox Testing
 ### System Test Case 1
@@ -18,12 +19,9 @@ Testing for successful login and access to index page.
 
 ### System Test Case 3
 ### System Test Case 4
-
-[Test Case 4 - build connection with  car](/testcases/carmove.gif)
-
 ### System Test Case 5
-
-![Test Case 6-score](/testcases/score.gif)
+Tests for the score. 
+https://github.com/mathewyeo/ICT2201-P1-7/blob/main/testcases/New%20vide01o.mp4
 
 ### System Test Case 6
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
@@ -39,3 +37,10 @@ Tests if Victory screen is displayed once the player completes the maze.
 Branch Coverage
 
 ![WhiteBox testing - Branch coverage](/testcases/branch.jpg)
+
+
+# Development Workflow
+
+# Reflections
+Marissa:
+
