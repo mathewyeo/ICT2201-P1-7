@@ -5,12 +5,12 @@ Project: Car aims to enhance children's understanding on basic computing knowled
 # WhiteBox Testing
 ### System Test Case 1
 Testing for invalid credentials. 
-<img src="https://user-images.githubusercontent.com/75107062/144883930-5eeda14a-4c35-451f-bb92-00b57921f720.png" >
+<img src="https://user-images.githubusercontent.com/75107062/144883930-5eeda14a-4c35-451f-bb92-00b57921f720.png" width = "500" >
 
 ### System Test Case 2
 Testing for successful login and access to index page.
-<img src="https://user-images.githubusercontent.com/75107062/144883973-17f9b5b6-2008-4d22-bdac-9c61785e4f7f.png">
-<img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" >
+<img src="https://user-images.githubusercontent.com/75107062/144883973-17f9b5b6-2008-4d22-bdac-9c61785e4f7f.png" width = "500">
+<img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" width = "500" >
 
 
 ### System Test Case 3
