@@ -18,6 +18,9 @@ Testing for successful login and access to index page.
 
 ### System Test Case 3
 ### System Test Case 4
+Tests if the car can connect to webportal
+![Test Case 4 - build connection with  car](/testcases/carmove.gif)
+
 ### System Test Case 5
 Tests for the score. 
 ![Test Case 6-score](/testcases/score.gif)
