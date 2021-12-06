@@ -11,7 +11,7 @@ Project: Car aims to enhance children's understanding on basic computing knowled
 ### System Test Case 6
 ### System Test Case 7
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
-![Test Case 7 - Gameover Screen](/testcases/Gameover.mp4)
+![Test Case 7 - Gameover Screen][![Watch the video](/testcases/Gameover.mp4)]
 ### System Test Case 8
 Tests if Victory screen is displayed once the player completes the maze.
 ![Test Case 8 - Victory Screen]
