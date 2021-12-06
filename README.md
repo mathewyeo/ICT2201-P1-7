@@ -29,10 +29,6 @@ Testing for successful login and access to index page.
 
 <img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" width = "500" >
 
-
-
-
-
 ### System Test Case 3
 
 ### System Test Case 4
@@ -61,17 +57,14 @@ Tests if Victory screen is displayed once the player completes the maze.
 
 https://docs.google.com/document/d/1tK3LI--h5lrHyQzFoephDCF4bykbQs2OHwLcxcNACyc/edit?usp=sharing
 
-
-
 # WhiteBox Testing
 Branch Coverage
 
 ![WhiteBox testing - Branch coverage](/testcases/branch.jpg)
 
 # Demo of proj
-![Demo](/testcases/Demo.gif)
-
-
+Please watch on Youtube.
+https://www.youtube.com/watch?v=4P2H6VKyOFw&ab_channel=hanggou
 
 # Development Workflow
 ## Roles: 
