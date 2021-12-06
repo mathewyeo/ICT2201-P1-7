@@ -20,14 +20,14 @@ Testing for successful login and access to index page.
 ### System Test Case 4
 ### System Test Case 5
 ### System Test Case 6
-
-### System Test Case 7
 Tests if Game Over screen is displayed once the score hits 0 before Player completes the maze.
 ![Test Case 7 - Gameover Screen](/testcases/gameover.gif)
 
-### System Test Case 8
+### System Test Case 7
 Tests if Victory screen is displayed once the player completes the maze.
 ![Test Case 8 - Victory Screen](/testcases/victory.gif)
+
+
 
 # WhiteBox Testing
 Branch Coverage
