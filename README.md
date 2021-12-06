@@ -2,15 +2,15 @@
 Project: Car aims to enhance children's understanding on basic computing knowledge through a series of computational quest designed to pair along with controllong a MSP432 robotic miniature car. The movement of the car will be based on the input by user and the sensors fitted to the car. 
 
 
-# BlackBox Testing
+# WhiteBox Testing
 ### System Test Case 1
 Testing for invalid credentials. 
-<img src="https://user-images.githubusercontent.com/75107062/144883930-5eeda14a-4c35-451f-bb92-00b57921f720.png" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/75107062/144883930-5eeda14a-4c35-451f-bb92-00b57921f720.png" >
 
 ### System Test Case 2
 Testing for successful login and access to index page.
-<img src="https://user-images.githubusercontent.com/75107062/144883973-17f9b5b6-2008-4d22-bdac-9c61785e4f7f.png" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/75107062/144883973-17f9b5b6-2008-4d22-bdac-9c61785e4f7f.png">
+<img src="https://user-images.githubusercontent.com/75107062/144883982-42bc9e19-5fe2-4231-a06d-24c7a263221c.png" >
 
 
 ### System Test Case 3
@@ -23,5 +23,3 @@ Tests if Game Over screen is displayed once the score hits 0 before Player compl
 ### System Test Case 8
 Tests if Victory screen is displayed once the player completes the maze.
 ![Test Case 8 - Victory Screen]
-
-# WhiteBox Testing
